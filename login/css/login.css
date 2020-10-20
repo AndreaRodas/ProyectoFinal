@@ -131,7 +131,9 @@ video {
   background-color: #cd9557;
   border-color: #cd9557;
 }
-
+.nav-class .a{
+  color: #ffffff;
+}
 .btn-secondary:active, .btn-secondary:focus, .btn-secondary:hover {
   background-color: #ba7c37 !important;
   border-color: #ba7c37 !important;
