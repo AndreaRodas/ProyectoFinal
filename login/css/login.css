@@ -36,7 +36,7 @@ video {
 
 @media (pointer: coarse) and (hover: none) {
   body {
-    background: url("../img/bg-mobile-fallback.jpg") #002E66 no-repeat center center scroll;
+    background: url("../img/fotom.png") #002e66 no-repeat center center scroll;
     background-size: cover;
   }
   body video {
@@ -131,9 +131,7 @@ video {
   background-color: #cd9557;
   border-color: #cd9557;
 }
-.nav-class .a{
-  color: #ffffff;
-}
+
 .btn-secondary:active, .btn-secondary:focus, .btn-secondary:hover {
   background-color: #ba7c37 !important;
   border-color: #ba7c37 !important;
