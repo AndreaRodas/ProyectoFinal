@@ -1,3 +1,6 @@
+<?php
+  require '../conexion.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,7 +11,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Login</title>
+  <title>Registrar Usuario</title>
 
   <!-- Bootstrap core CSS -->
   <link href="taller/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -37,26 +40,22 @@
         <div class="col-12 my-auto">
           <div class="masthead-content text-white py-5 py-md-0">
             <h1 class="mb-3">Taller</h1>
-            <form action="registrar.html" method="POST"></form>
+            <form action="registrar.php" method="POST">
             <div class="input-group input-group-newsletter">
-              <input type="text" name= "usuario" class="form-control" placeholder="Ingresar Usuario o Correo" aria-label="Ingresar Usuario">
+              <input type="text" name= "nombre" class="form-control" placeholder="Ingresar Usuario o Correo" aria-label="Ingresar Usuario">
               </div>
              <br></br>
               <div class="input-group input-group-newsletter">
                 <input type="password" name="contraseña" class="form-control" placeholder="Ingresar Contraseña" aria-label="Ingresar Contraseña"> 
               </div>
               <br></br>
-              <div class="input-group input-group-newsletter">
-                <input type="password" name="confirmar_contraseña" class="form-control" placeholder="Confirmar Contraseña" aria-label="Ingresar Contraseña"> 
-              </div>
-              <br></br>
-                  <button class="btn btn-secondary" type="button" id="submit-button"><nav class="sb-sidenav-menu-nested nav"> <a class="nav-link"  href="../principal/principal.html">Crear Cuenta</a></nav></button>
+                  <button class="btn btn-secondary" type="submit" value="submit"><nav class="sb-sidenav-menu-nested nav"> <a class="nav-link"  href="../principal/principal.html">Confirmar</a></nav></button>
           </div>
         </div>
       </div>
     </div>
   </div> 
-
+  </form>
   <!-- Bootstrap core JavaScript -->
   <script src="taller/jquery/jquery.min.js"></script>
   <script src="taller/bootstrap/js/bootstrap.bundle.min.js"></script>

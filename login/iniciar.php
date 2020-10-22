@@ -1,3 +1,23 @@
+<?php
+  require '../conexion.php';
+
+  $message = '';
+
+  if (!empty($_POST['nombre']) && !empty($_POST['contraseña'])) {
+    $sql = "INSERT INTO usuario (nombre, contraseña) VALUES (:nombre, :contraseña)";
+    $stmt = $conn->prepare($sql);
+    $stmt->bindParam(':nombre', $_POST['contraseña']);
+    $password = password_hash($_POST['contraseña'], PASSWORD_BCRYPT);
+    $stmt->bindParam(':contraseña', $password);
+
+    if ($stmt->execute()) {
+      $message = 'Successfully created new user';
+    } else {
+      $message = 'Sorry there must have been an issue creating your account';
+    }
+  }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,7 +28,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Login</title>
+  <title>Iniciar Sesión</title>
 
   <!-- Bootstrap core CSS -->
   <link href="taller/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -29,6 +49,10 @@
   <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
     <source src="mp4/video.mp4" type="video/mp4">
   </video>
+  <?php if(!empty($message)): ?>
+      <p> <?= $message ?></p>
+    <?php endif; ?>
+
 
   <div class="masthead">
     <div class="masthead-bg"></div>
@@ -36,17 +60,14 @@
       <div class="row h-100">
         <div class="col-12 my-auto">
           <div class="masthead-content text-white py-5 py-md-0">
+          <form action="iniciar.php" method="POST">
             <h1 class="mb-3">Taller</h1>
-            <form action="login.html" method="POST"></form>
             <div class="input-group input-group-newsletter">
-              <input type="text" name= "usuario" class="form-control" placeholder="Ingresar Usuario o Correo" aria-label="Ingresar Usuario">
-              </div>
-             <br></br>
-              <div class="input-group input-group-newsletter">
-                <input type="password" name="contraseña" class="form-control" placeholder="Ingresar Contraseña" aria-label="Ingresar Contraseña"> 
-              </div>
-              <br></br>
-                  <button class="btn btn-secondary" type="button" id="submit-button"><nav class="sb-sidenav-menu-nested nav"> <a class="nav-link"  href="../principal/principal.html">Iniciar Sesión</a></nav></button>
+      <input name="nombre" type="text" placeholder="Enter your email">
+      <input name="contraseña" type="password" placeholder="Enter your Password">
+      <input name="confirm_password" type="password" placeholder="Confirm Password">
+      <input type="submit" value="Submit">
+    </form>
           </div>
         </div>
       </div>
@@ -61,5 +82,4 @@
   <script src="js/login.min.js"></script>
 
 </body>
-
 </html>
