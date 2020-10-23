@@ -1,6 +1,6 @@
 <?php
 
-  require '../conexion.php';
+  require 'conexion.php';
 
   $message = '';
 
@@ -39,7 +39,7 @@
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
 
   <!-- Custom styles for this template -->
-  <link href="css/style.css" rel="stylesheet">
+  <link href="css/style_login.css" rel="stylesheet">
 
 </head>
 
@@ -60,7 +60,7 @@
         <div class="col-12 my-auto">
           <div class="masthead-content text-white py-5 py-md-0">
             <h1 class="mb-3">Iniciar Sesión</h1>
-            <form action="index.php" method="POST">
+            <form action="principal.html" method="POST">
             <div class="input-group input-group-newsletter">
               <input type="text" name="nombre" class="form-control" placeholder="Ingresar Usuario" aria-label="Ingresar Usuario">
               </div>
