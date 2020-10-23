@@ -29,6 +29,7 @@
   <meta name="author" content="">
 
   <title>Taller <3</title>
+  <link rel="icon" type="image/x-icon" href="img/carro.ico"/>
 
   <!-- Bootstrap core CSS -->
   <link href="taller/bootstrap/css/bootstrap.min.css" rel="stylesheet">
