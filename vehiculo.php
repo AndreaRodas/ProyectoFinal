@@ -48,40 +48,70 @@
                 <div class="row">
                     <div class="col-lg-8 mx-auto">
                         <h2 class="text-white mb-4">Ingrese Datos del Vehículo</h2>
-                        <form>
+                        <form action="vehiculo.php" method="POST">
+
                         <div class="form-group">
                         <p class="text-white-50"><label for="placa">Placa</label>
-                        <input type="text" class="form-control" id="placa">
+                        <input type="text" class="form-control" name = "placa"id="placa">
                     </p>
                     <div class="form-group">
                         <p class="text-white-50"><label for="marca">Marca</label>
-                        <input type="text" class="form-control" id="marca">
+                        <input type="text" class="form-control" name = "marca" id="marca">
                     </p>
                     <div class="form-group">
                         <p class="text-white-50"><label for="linea">Línea</label>
-                        <input type="text" class="form-control" id="linea">
+                        <input type="text" class="form-control" name = "linea" id="linea">
                     </p>
                     <div class="form-group">
                         <p class="text-white-50"><label for="modelo">Modelo</label>
-                        <input type="text" class="form-control" id="modelo">
+                        <input type="text" class="form-control" name = "modelo" id="modelo">
                     </p>
                     <div class="form-group">
                         <p class="text-white-50"><label for="color">Color</label>
-                        <input type="text" class="form-control" id="color">
+                        <input type="text" class="form-control" name= "color" id="color">
                     </p>
-                </div>
-                </div>
-                </div>
-                </div>
-                </div>
-                </div>
-                </div>
-                <div class="mx-auto text-center">
-                    <a class="btn btn-primary js-scroll-trigger" href="reparacion.php">Reparación</a>
-                    <a class="btn btn-primary js-scroll-trigger" href="repuesto.php">Repuesto</a>
-                </div>
+                      <input type= "submit" value="enviar">
                 <br></br>
                 <br></br>
+                <div id = "envio">
+                <?php
+
+
+
+$conn = mysqli_connect("localhost","root","","taller");
+
+
+
+                
+                if(isset($_POST['placa'])){
+                    $placa = $_POST['placa'];
+                    $marca = $_POST['marca'];
+                    $linea = $_POST['linea'];
+                    $modelo = $_POST['modelo'];
+                    $color = $_POST['color'];
+                    echo $placa, $marca, $linea, $modelo, $color;
+                    
+
+                    $sql = "INSERT INTO vehiculo(placa, marca, linea, modelo, color)
+                                            VALUES('$placa', '$marca', '$linea', '$modelo', '$color')";
+                    
+                    if ($conn->query ($sql)==true){
+                        echo '<div><form action=""><input type="checkbox">$placa, $marca, $linea, $modelo, $color</form></div>';
+                    }else{
+                        die("Error al insetar datos: ". $conn->error);
+                    }
+                }
+
+                ?>
+                </div>
+                </div>
+                </div>
+                </div>
+                </div>
+                </div>
+                </div>
+                </div>
+                </div>
         </form>
         </section>
       

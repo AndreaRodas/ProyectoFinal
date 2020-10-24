@@ -1,5 +1,7 @@
 <?php
 session_start();
+
+    if(($_SESSION["nombre"]) !=''){
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -31,7 +33,7 @@ session_start();
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="reparacion.php">Reparación</a></li>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="repuesto.php">Repuestos</a></li>
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="index.php">Cerrar Sesión</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="cerrar.php">Cerrar Sesión</a></li>
                     </ul>
                 </div>
             </div>
@@ -58,5 +60,11 @@ session_start();
         <script src="js/scripts.js"></script>
     </body>
 </html>
+<?php
+    }else {
+       header("Location: index.php");
+    }
+?>
+
 
 

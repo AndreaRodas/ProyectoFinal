@@ -1,4 +1,5 @@
-<?php
-mysqli_connect("Localhost","root","");
-mysqli_select_db("taller");
+
+<?php 
+
+$conexion = mysqli_connect("localhost","root","","taller");
 ?>

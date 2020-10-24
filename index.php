@@ -39,13 +39,13 @@
         <div class="col-12 my-auto">
           <div class="masthead-content text-white py-5 py-md-0">
             <h1 class="mb-3">Iniciar Sesión</h1>
-            <form action="validacion.php" method="get">
+            <form action="validacion.php" method="POST">
             <div class="input-group input-group-newsletter">
-              <input type="text" name="nombre" class="form-control" placeholder="Ingresar Usuario" aria-label="Ingresar Usuario">
+              <input type="text" name="nombre" class="form-control" placeholder="Ingresar Usuario">
               </div>
              <br></br>
               <div class="input-group input-group-newsletter">
-                <input type="password" name="contraseña" class="form-control" placeholder="Ingresar Contraseña" aria-label="Ingresar Contraseña"> 
+                <input type="password" name="contraseña" class="form-control" placeholder="Ingresar Contraseña"> 
               </div>
               <br></br>
                   <button class="btn btn-secondary" type="submit" id="submit-button"><nav class="sb-sidenav-menu-nested nav"> <a class="nav-link">Confirmar</a></nav></button>
@@ -64,3 +64,4 @@
 </body>
 
 </html>
+
