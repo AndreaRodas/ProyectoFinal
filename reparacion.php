@@ -1,3 +1,7 @@
+<?php
+$conn = mysqli_connect("localhost","root","","taller");
+?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -69,6 +73,34 @@
                                 <p class="text-white-50"><label for="observacion_final">Observaciones Final</label>
                                     <textarea class="form-control" id="observacion_final" rows="3"></textarea>
                             </p>
+                            <div id = "envio">
+                <?php
+
+                            $conn = mysqli_connect("localhost","root","","taller");
+
+
+
+                
+                if(isset($_POST['enviar'])){
+                    $placa = $_POST['placa'];
+                    $marca = $_POST['marca'];
+                    $linea = $_POST['linea'];
+                    $modelo = $_POST['modelo'];
+                    $color = $_POST['color'];
+                    echo $placa, $marca, $linea, $modelo, $color;
+                    
+
+                    $sql = "INSERT INTO vehiculo(placa, marca, linea, modelo, color)
+                                            VALUES('$placa', '$marca', '$linea', '$modelo', '$color')";
+                    
+                    if ($conn->query ($sql)==true){
+                        echo '<div><form action=""><input type="checkbox">$placa, $marca, $linea, $modelo, $color</form></div>';
+                    }else{
+                        die("Error al insetar datos: ". $conn->error);
+                    }
+                }
+
+                ?>
                 </div>
                 </div>
                 </div>

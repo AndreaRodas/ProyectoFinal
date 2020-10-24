@@ -48,7 +48,7 @@
                 <div class="row">
                     <div class="col-lg-8 mx-auto">
                         <h2 class="text-white mb-4">Ingrese Datos del Vehículo</h2>
-                        <form action="vehiculo.php" method="POST">
+                        <form action="reparacion.php" method="POST">
 
                         <div class="form-group">
                         <p class="text-white-50"><label for="placa">Placa</label>
@@ -70,7 +70,7 @@
                         <p class="text-white-50"><label for="color">Color</label>
                         <input type="text" class="form-control" name= "color" id="color">
                     </p>
-                      <input type= "submit" value="enviar">
+                      <input type= "submit" value="enviar" name="enviar">
                 <br></br>
                 <br></br>
                 <div id = "envio">
@@ -83,7 +83,7 @@ $conn = mysqli_connect("localhost","root","","taller");
 
 
                 
-                if(isset($_POST['placa'])){
+                if(isset($_POST['enviar'])){
                     $placa = $_POST['placa'];
                     $marca = $_POST['marca'];
                     $linea = $_POST['linea'];
