@@ -1,23 +1,4 @@
-<?php
 
-  require 'conexion.php';
-
-  $message = '';
-
-  if (!empty($_POST['nombre']) && !empty($_POST['contraseña'])) {
-    $sql = "INSERT INTO usuario (nombre, contraseña) VALUES (:nombre, :contraseña)";
-    $stmt = $conn->prepare($sql);
-    $stmt->bindParam(':nombre', $_POST['nombre']);
-    $password = password_hash($_POST['contraseña'], PASSWORD_BCRYPT);
-    $stmt->bindParam(':contraseña', $password);
-
-    if ($stmt->execute()) {
-      $message = 'Successfully created new user';
-    } else {
-      $message = 'Sorry there must have been an issue creating your account';
-    }
-  }
-?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -31,23 +12,20 @@
   <title>Taller <3</title>
   <link rel="icon" type="image/x-icon" href="img/carro.ico"/>
 
-  <!-- Bootstrap core CSS -->
+ 
   <link href="taller/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
-  <!-- Custom fonts for this template -->
+
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,200i,300,300i,400,400i,600,600i,700,700i,900,900i" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Merriweather:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
 
-  <!-- Custom styles for this template -->
+
   <link href="css/style_login.css" rel="stylesheet">
 
 </head>
 
 <body>
-<?php if(!empty($message)): ?>
-      <p> <?= $message ?></p>
-<?php endif; ?>
 
   <div class="overlay"></div>
   <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
@@ -61,7 +39,7 @@
         <div class="col-12 my-auto">
           <div class="masthead-content text-white py-5 py-md-0">
             <h1 class="mb-3">Iniciar Sesión</h1>
-            <form action="principal.html" method="POST">
+            <form action="validacion.php" method="get">
             <div class="input-group input-group-newsletter">
               <input type="text" name="nombre" class="form-control" placeholder="Ingresar Usuario" aria-label="Ingresar Usuario">
               </div>
@@ -77,11 +55,10 @@
     </div>
   </div> 
 </form>
-  <!-- Bootstrap core JavaScript -->
+
   <script src="taller/jquery/jquery.min.js"></script>
   <script src="taller/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-  <!-- Custom scripts for this template -->
   <script src="js/login.min.js"></script>
 
 </body>
