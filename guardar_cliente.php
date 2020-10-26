@@ -22,7 +22,7 @@ if (isset($_POST['guardar_cliente'])){
       $_SESSION['message'] = 'Cliente Guardado';
       $_SESSION['message_type'] = 'info';
 
-      header ("Location: clientes.php");
+      header ("Location: vehiculo.php");
 }
 
 ?>
