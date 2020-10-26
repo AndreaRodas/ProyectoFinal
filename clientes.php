@@ -21,15 +21,17 @@
     
         <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
             <div class="container">
-                <a class="navbar-brand js-scroll-trigger" href="principal.html">Taller-Tek</a>
+                <a class="navbar-brand js-scroll-trigger" href="principal.php">Taller-Tek</a>
                 <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     Menu
                     <i class="fas fa-bars"></i>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ml-auto">
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="reparacion.php">Reparación</a></li>
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="repuesto.php">Repuestos</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="clientes.php">Registro de Reparación</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="clientes.php">Stock Repuestos</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="clientes.php">Clientes</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="clientes.php">Vehículos</a></li>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="index.php">Cerrar Sesión</a></li>
                     </ul>
                 </div>
@@ -68,25 +70,25 @@
                         <input type="text" class="form-control" name = "direccion" id="direccion">
                     </p>
              
-                    <button type="button" class="btn btn-dark btn-block" data-toggle="modal" data-target="#exampleModal"><i class="far fa-save"></i>
+                    <button type="button" class="btn btn-primary js-scroll-trigger" data-toggle="modal" data-target="#exampleModal"><i class="far fa-save"></i>
                                                         Guardar
                                                       </button>
                                                       <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                                         <div class="modal-dialog" role="document">
                                                           <div class="modal-content">
                                                             <div class="modal-header">
-                                                              <h5 class="modal-title" id="exampleModalLabel"><i class="fas fa-exclamation-triangle"></i>AVISO</h5>
+                                                                <h5 class="modal-title" id="exampleModalLabel"><i class="fas fa-exclamation-triangle"></i> ¡AVISO!</h5>
                                                               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                                 <span aria-hidden="true">&times;</span>
                                                               </button>
                                                             </div>
                                                             <div class="modal-body">
-                                                                ¿Desea guardar el cliente?
+                                                                ¿Desea guardar los datos del cliente?
                                                             </div>
                                                             <div class="modal-footer">
-                                                                <input type="submit" class="btn btn-dark btn-block" name="guardar_cliente"
-                                                                value="Guardar Vehiculo">
-                                                              <button type="button" class="btn btn-dark btn-block" data-dismiss="modal"><i class="fas fa-arrow-left"></i>Regresar</button>
+                                                                <input type="submit" class="btn btn-primary js-scroll-trigger" name="guardar_cliente"
+                                                                value="Guardar Cliente">
+                                                              <button type="button" class="btn btn-primary js-scroll-trigger"data-dismiss="modal"><i class="fas fa-arrow-left"></i>Regresar</button>
                                                               
                                                             </div>
                                                           </div>
@@ -100,10 +102,13 @@
                 </div>
                 </div>
                 </div>
-                </div>
+                </div> 
+        <br></br>
+        <br></br>
+        <br></br>
         </form>
         </section>
-      
+       
         <footer class="footer bg-black small text-center text-white-50"><div class="container">Copyright © Taller-Tek</div></footer>
       
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>

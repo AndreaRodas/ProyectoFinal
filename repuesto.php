@@ -26,8 +26,10 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ml-auto">
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="reparacion.php">Reparación</a></li>
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="repuesto.php">Repuestos</a></li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="clientes.php">Registro de Reparación</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="clientes.php">Stock Repuestos</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="clientes.php">Clientes</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="clientes.php">Vehículos</a></li>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="index.php">Cerrar Sesión</a></li>
                     </ul>
                 </div>
@@ -42,7 +44,7 @@
                 </div>
             </div>
         </header>
-      
+        <form action="guardar_repuesto.php" method="POST" enctype="multipart/form-data">
         <section class="about-section text-center" id="about">
             <div class="container">
                 <div class="row">
@@ -69,6 +71,31 @@
                                 <p class="text-white-50"><label for="descripcion">Descripcion</label>
                                     <textarea class="form-control" id="descripcion" rows="3"></textarea>
                             </p>
+                            <button type="button" class="btn btn-primary js-scroll-trigger" data-toggle="modal" data-target="#exampleModal"><i class="far fa-save"></i>
+                                                        Guardar
+                                                      </button>
+                                                      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                        <div class="modal-dialog" role="document">
+                                                          <div class="modal-content">
+                                                            <div class="modal-header">
+                                                              <h5 class="modal-title" id="exampleModalLabel"><i class="fas fa-exclamation-triangle"></i>AVISO</h5>
+                                                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                <span aria-hidden="true">&times;</span>
+                                                              </button>
+                                                            </div>
+                                                            <div class="modal-body">
+                                                                ¿Desea guardar los datos de los repuestos?
+                                                            </div>
+                                                            <div class="modal-footer">
+                                                                <input type="submit" class="btn btn-primary js-scroll-trigger" name="guardar_repuesto"
+                                                                value="Guardar Repuestos">
+                                                              <button type="button" class="btn btn-primary js-scroll-trigger" data-dismiss="modal"><i class="fas fa-arrow-left"></i>Regresar</button>
+                                                              
+                                                            </div>
+                                                          </div>
+                                                        </div>
+                                                      </div>   
+                            
                 </div>
                 </div>
                 </div>
@@ -76,10 +103,6 @@
                 </div>
                 </div>
                 </div>
-                <div class="mx-auto text-center">
-                    <a class="btn btn-primary js-scroll-trigger" href="datos.php">Confirmar</a>
-                <br></br>
-                <br></br>
         </form>
         </form>
         </section>
