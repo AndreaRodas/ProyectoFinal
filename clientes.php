@@ -1,4 +1,4 @@
-<?php include ("conexion_vehiculo.php")
+<?php include ("conexion_cliente.php")
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -44,34 +44,30 @@
                 </div>
             </div>
         </header>
-        <form action="guardar_vehiculo.php" method="POST" enctype="multipart/form-data">
+        <form action="guardar_cliente.php" method="POST" enctype="multipart/form-data">
         <section class="about-section text-center" id="about">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-8 mx-auto">
-                        <h2 class="text-white mb-4">Ingrese Datos del Vehículo</h2>
+                        <h2 class="text-white mb-4">Ingrese Datos del Cliente</h2>
                         
                         <div class="form-group">
-                        <p class="text-white-50"><label for="placa">Placa</label>
-                        <input type="text" class="form-control" name = "placa"id="placa">
+                        <p class="text-white-50"><label for="nombre_apellido">Nombre Completo</label>
+                        <input type="text" class="form-control" name = "nombre_apellido"id="nombre_apellido">
                     </p>
                     <div class="form-group">
-                        <p class="text-white-50"><label for="marca">Marca</label>
-                        <input type="text" class="form-control" name = "marca" id="marca">
+                        <p class="text-white-50"><label for="nit">Nit</label>
+                        <input type="text" class="form-control" name = "nit" id="nit">
                     </p>
                     <div class="form-group">
-                        <p class="text-white-50"><label for="linea">Línea</label>
-                        <input type="text" class="form-control" name = "linea" id="linea">
+                        <p class="text-white-50"><label for="telefono">Telefono</label>
+                        <input type="text" class="form-control" name = "telefono" id="telefono">
                     </p>
                     <div class="form-group">
-                        <p class="text-white-50"><label for="modelo">Modelo</label>
-                        <input type="text" class="form-control" name = "modelo" id="modelo">
+                        <p class="text-white-50"><label for="direccion">Direccion</label>
+                        <input type="text" class="form-control" name = "direccion" id="direccion">
                     </p>
-                    <div class="form-group">
-                        <p class="text-white-50"><label for="color">Color</label>
-                        <input type="text" class="form-control" name= "color" id="color">
-                    </p>
-                    
+             
                     <button type="button" class="btn btn-dark btn-block" data-toggle="modal" data-target="#exampleModal"><i class="far fa-save"></i>
                                                         Guardar
                                                       </button>
@@ -85,10 +81,10 @@
                                                               </button>
                                                             </div>
                                                             <div class="modal-body">
-                                                                ¿Desea guardar el vehiculo?
+                                                                ¿Desea guardar el cliente?
                                                             </div>
                                                             <div class="modal-footer">
-                                                                <input type="submit" class="btn btn-dark btn-block" name="guardar_vehiculo"
+                                                                <input type="submit" class="btn btn-dark btn-block" name="guardar_cliente"
                                                                 value="Guardar Vehiculo">
                                                               <button type="button" class="btn btn-dark btn-block" data-dismiss="modal"><i class="fas fa-arrow-left"></i>Regresar</button>
                                                               
@@ -96,10 +92,8 @@
                                                           </div>
                                                         </div>
                                                       </div>                   
-                <br></br>
-                <br></br>
-                </div>
-                </div>
+                
+            
                 </div>
                 </div>
                 </div>

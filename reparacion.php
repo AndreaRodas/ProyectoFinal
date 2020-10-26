@@ -76,7 +76,7 @@ $conn = mysqli_connect("localhost","root","","taller");
                             <div id = "envio">
                 <?php
 
-                            $conn = mysqli_connect("localhost","root","","taller");
+                            $conn = mysqli_connect("localhost","root","","taller-tek");
 
 
 
