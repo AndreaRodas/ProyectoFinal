@@ -8,9 +8,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
-
-  <title>Taller <3</title>
-  <link rel="icon" type="image/x-icon" href="img/carro.ico"/>
+  <title>Taller-Tek</title>
+        <link rel="icon" type="image/x-icon" href="img/logo.ico" />
 
  
   <link href="taller/bootstrap/css/bootstrap.min.css" rel="stylesheet">
