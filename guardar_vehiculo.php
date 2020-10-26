@@ -19,7 +19,7 @@ if (isset($_POST['guardar_vehiculo'])){
          die("Query Failed");
      }
 
-      $_SESSION['message'] = 'vehiculo Guardado';
+      $_SESSION['message'] = 'Vehiculo Guardado';
       $_SESSION['message_type'] = 'info';
 
       header ("Location: vehiculo.php");

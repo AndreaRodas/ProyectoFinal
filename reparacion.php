@@ -1,7 +1,3 @@
-<?php
-$conn = mysqli_connect("localhost","root","","taller");
-?>
-
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -30,8 +26,10 @@ $conn = mysqli_connect("localhost","root","","taller");
                 </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ml-auto">
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="reparacion.php">Reparación</a></li>
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="repuesto.php">Repuestos</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="clientes.php">Registro de Reparación</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="clientes.php">Stock Repuestos</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="clientes.php">Clientes</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="clientes.php">Vehículos</a></li>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="index.php">Cerrar Sesión</a></li>
                     </ul>
                 </div>
@@ -46,7 +44,7 @@ $conn = mysqli_connect("localhost","root","","taller");
                 </div>
             </div>
         </header>
-      
+        <form action="guardar_reparacion.php" method="POST" enctype="multipart/form-data">
         <section class="about-section text-center" id="about">
             <div class="container">
                 <div class="row">
@@ -73,46 +71,39 @@ $conn = mysqli_connect("localhost","root","","taller");
                                 <p class="text-white-50"><label for="observacion_final">Observaciones Final</label>
                                     <textarea class="form-control" id="observacion_final" rows="3"></textarea>
                             </p>
-                            <div id = "envio">
-                <?php
-
-                            $conn = mysqli_connect("localhost","root","","taller-tek");
-
-
-
+                            <button type="button" class="btn btn-primary js-scroll-trigger" data-toggle="modal" data-target="#exampleModal"><i class="far fa-save"></i>
+                                                        Guardar
+                                                      </button>
+                                                      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                        <div class="modal-dialog" role="document">
+                                                          <div class="modal-content">
+                                                            <div class="modal-header">
+                                                              <h5 class="modal-title" id="exampleModalLabel"><i class="fas fa-exclamation-triangle"></i>AVISO</h5>
+                                                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                <span aria-hidden="true">&times;</span>
+                                                              </button>
+                                                            </div>
+                                                            <div class="modal-body">
+                                                                ¿Desea guardar los datos de reparación?
+                                                            </div>
+                                                            <div class="modal-footer">
+                                                                <input type="submit" class="btn btn-primary js-scroll-trigger" name="guardar_reparacion"
+                                                                value="Guardar Reparación">
+                                                              <button type="button" class="btn btn-primary js-scroll-trigger" data-dismiss="modal"><i class="fas fa-arrow-left"></i>Regresar</button>
+                                                              
+                                                            </div>
+                                                          </div>
+                                                        </div>
+                                                      </div>                   
+                <br></br>
+                <br></br>
+                </div>
+                </div>
+                </div>
+                </div>
+                </div>
+                </div>
                 
-                if(isset($_POST['enviar'])){
-                    $placa = $_POST['placa'];
-                    $marca = $_POST['marca'];
-                    $linea = $_POST['linea'];
-                    $modelo = $_POST['modelo'];
-                    $color = $_POST['color'];
-                    echo $placa, $marca, $linea, $modelo, $color;
-                    
-
-                    $sql = "INSERT INTO vehiculo(placa, marca, linea, modelo, color)
-                                            VALUES('$placa', '$marca', '$linea', '$modelo', '$color')";
-                    
-                    if ($conn->query ($sql)==true){
-                        echo '<div><form action=""><input type="checkbox">$placa, $marca, $linea, $modelo, $color</form></div>';
-                    }else{
-                        die("Error al insetar datos: ". $conn->error);
-                    }
-                }
-
-                ?>
-                </div>
-                </div>
-                </div>
-                </div>
-                </div>
-                </div>
-                </div>
-                <div class="mx-auto text-center">
-                    <a class="btn btn-primary js-scroll-trigger" href="repuesto.php">Repuestos</a>
-                    <a class="btn btn-primary js-scroll-trigger" href="datos.php">Confirmar</a>
-                <br></br>
-                <br></br>
         </form>
         </section>
        
