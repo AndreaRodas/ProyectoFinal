@@ -10,7 +10,7 @@ if (isset($_POST['guardar_vehiculo'])){
      $linea = $_POST['linea'];
      $modelo = $_POST['modelo'];
      $color = $_POST['color'];
-     
+ 
     
      $query = "INSERT INTO  vehiculo(placa, marca, linea, modelo, color) 
     VALUES ('$placa', '$marca', '$linea', '$modelo', '$color')";
@@ -22,7 +22,7 @@ if (isset($_POST['guardar_vehiculo'])){
       $_SESSION['message'] = 'Vehiculo Guardado';
       $_SESSION['message_type'] = 'info';
 
-      header ("Location: vehiculo.php");
+      header ("Location: reparacion.php");
 }
 
 ?>

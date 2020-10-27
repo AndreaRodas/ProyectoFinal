@@ -53,23 +53,23 @@
                         <form>
                         <div class="form-group">
                         <p class="text-white-50"><label for="falla">Falla</label>
-                        <input type="text" class="form-control" id="falla">
+                        <input type="text" class="form-control" name="falla" id="falla">
                     </p>
                     <div class="form-group">
                         <p class="text-white-50"><label for="observaciones_tecnicas">Observaciones Técnicas</label>
-                            <textarea class="form-control" id="observaciones_tecnicas" rows="3"></textarea>
+                            <textarea class="form-control" name="observaciones_tecnicas" id="observaciones_tecnicas" rows="3"></textarea>
                     </p>
                     <div class="form-group">
                         <p class="text-white-50"><label for="fecha_ingreso">Fecha de Ingreso</label>
-                            <input type="text" class="form-control" id="fecha_ingreso">
+                            <input type="text" class="form-control" name="fecha_ingreso" id="fecha_ingreso">
                         </p>
                         <div class="form-group">
                             <p class="text-white-50"><label for="fecha_egreso">Fecha de Egreso</label>
-                                <input type="text" class="form-control" id="fecha_egreso">
+                                <input type="text" class="form-control" name="fecha_egreso" id="fecha_egreso">
                             </p>
                             <div class="form-group">
                                 <p class="text-white-50"><label for="observacion_final">Observaciones Final</label>
-                                    <textarea class="form-control" id="observacion_final" rows="3"></textarea>
+                                    <textarea class="form-control" name="observacion_final" id="observacion_final" rows="3"></textarea>
                             </p>
                             <button type="button" class="btn btn-primary js-scroll-trigger" data-toggle="modal" data-target="#exampleModal"><i class="far fa-save"></i>
                                                         Guardar

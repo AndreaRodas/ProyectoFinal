@@ -52,24 +52,24 @@
                         <h2 class="text-white mb-4">Ingrese Datos de Repuestos</h2>
                         <form>
                         <div class="form-group">
-                        <p class="text-white-50"><label for="nombre_rep">Nombre del Repuesto</label>
-                        <input type="text" class="form-control" id="nombre_rep">
+                        <p class="text-white-50"><label for="nombre_repuesto">Nombre del Repuesto</label>
+                        <input type="text" class="form-control" name="nombre_repuesto" id="nombre_repuesto">
                     </p>
                     <div class="form-group">
                         <p class="text-white-50"><label for="precio">Precio</label>
-                        <input type="text" class="form-control" id="precio">
+                        <input type="text" class="form-control" name="precio"id="precio">
                     </p>
                     <div class="form-group">
                         <p class="text-white-50"><label for="stock">Repuesto en existencia</label>
-                            <input type="text" class="form-control" id="stock">
+                            <input type="text" class="form-control" name="stock" id="stock">
                         </p>
                     <div class="form-group">
                         <p class="text-white-50"> <label for="imagen_repuesto">Imagen Repuesto</label>
-                            <input type="file" class="form-control-file" id="imagen_repuesto">
+                            <input type="file" class="form-control-file" name="imagen_repuesto" id="imagen_repuesto">
                         </p>   
                             <div class="form-group">
                                 <p class="text-white-50"><label for="descripcion">Descripcion</label>
-                                    <textarea class="form-control" id="descripcion" rows="3"></textarea>
+                                    <textarea class="form-control" name="descripcion" id="descripcion" rows="3"></textarea>
                             </p>
                             <button type="button" class="btn btn-primary js-scroll-trigger" data-toggle="modal" data-target="#exampleModal"><i class="far fa-save"></i>
                                                         Guardar
