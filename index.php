@@ -30,11 +30,11 @@
   <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
     <source src="mp4/video.mp4" type="video/mp4">
   </video>
-
+  
   <div class="masthead">
     <div class="masthead-bg"></div>
     <div class="container h-100">
-      <div class="row h-100">
+      <div class="row h-100"> 
         <div class="col-12 my-auto">
           <div class="masthead-content text-white py-5 py-md-0">
             <h1 class="mb-3">Iniciar Sesión</h1>
@@ -47,13 +47,13 @@
                 <input type="password" name="contraseña" class="form-control" placeholder="Ingresar Contraseña"> 
               </div>
               <br></br>
-                  <button class="btn btn-secondary" type="submit" id="submit-button"><nav class="sb-sidenav-menu-nested nav"> <a class="nav-link">Confirmar</a></nav></button>
+                  <button class="btn btn-secondary" type="submit" id="submit-button" name="guardar"><nav class="sb-sidenav-menu-nested nav"> <a class="nav-link">Confirmar</a></nav></button>
           </div>
         </div>
       </div>
     </div>
   </div> 
-</form>
+  </form>
 
   <script src="taller/jquery/jquery.min.js"></script>
   <script src="taller/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -61,6 +61,5 @@
   <script src="js/login.min.js"></script>
 
 </body>
-
 </html>
 
