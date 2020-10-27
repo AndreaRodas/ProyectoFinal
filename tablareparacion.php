@@ -77,7 +77,7 @@
                         
                                     <td>
                                   
-                                        <a href="editar_cliente.php?id_cliente=<?php echo $row['id_cliente']?>" class="btn btn-primary js-scroll-trigger">
+                                        <a href="editar_cliente.php?id_cliente=<?php echo $row['id_cliente']?>" class="btn btn-dark">
                                         <i class="fas fa-edit"></i>
 
                                         </a>
@@ -103,7 +103,7 @@
                                                     <a href="eliminar_cliente.php?id_cliente=<?php echo $row['id_cliente']?>" class="btn btn-danger btn-block">ELIMINAR<i class="fas fa-trash"></i></i>
                                         
                                         </a>
-                                                      <button type="button" class="btn btn-primary js-scroll-trigger" data-dismiss="modal"><i class="fas fa-arrow-left"></i>Regresar</button>
+                                                      <button type="button" class="btn btn-dark btn-block" data-dismiss="modal"><i class="fas fa-arrow-left"></i>Regresar</button>
                                                       
                                                     </div>
                                                   </div>
