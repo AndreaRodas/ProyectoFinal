@@ -30,10 +30,10 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ml-auto">
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="clientes.php">Registro de Reparación</a></li>
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="clientes.php">Stock Repuestos</a></li>
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="clientes.php">Clientes</a></li>
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="clientes.php">Vehículos</a></li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="tablareparacion.php">Registro de Reparación</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="tablarepuestos.php">Stock Repuestos</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="tablaclientes.php">Clientes</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="tablavehiculo.php">Vehículos</a></li>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="index.php">Cerrar Sesión</a></li>
                     </ul>
                 </div>
@@ -57,27 +57,29 @@
                         <table style="width: 100%;" class="table table-stripedd">
                             <thead class="thead-dark">
                                 <tr>
-                                    <th>Nombre Completo</th>
-                                    <th>Nit </th>
-                                    <th>Teléfono</th>
-                                    <th>Dirección</th>
+                                    <th>Placa</th>
+                                    <th>Marca</th>
+                                    <th>Línea</th>
+                                    <th>Modelo</th>
+                                    <th>Color</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <?php 
-                       $query = "SELECT * FROM clientes";
+                       $query = "SELECT * FROM vehiculo";
                        $result = mysqli_query($conn, $query);
                        
                        while ($row = mysqli_fetch_array($result)) { ?>
                                 <tr>
-                                    <td><p class="text-white-50"><?php echo $row['nombre_apellido'] ?></p></td>
-                                    <td><p class="text-white-50"><?php echo $row['nit'] ?></p></td>
-                                    <td><p class="text-white-50"><?php echo $row['telefono'] ?></p></td>
-                                    <td><p class="text-white-50"><?php echo $row['direccion'] ?></p></td>
+                                    <td><p class="text-white-50"><?php echo $row['placa'] ?></p></td>
+                                    <td><p class="text-white-50"><?php echo $row['maraca'] ?></p></td>
+                                    <td><p class="text-white-50"><?php echo $row['linea'] ?></p></td>
+                                    <td><p class="text-white-50"><?php echo $row['modelo'] ?></p></td>
+                                    <td><p class="text-white-50"><?php echo $row['color'] ?></p></td>
                         
                                     <td>
                                   
-                                        <a href="editar_cliente.php?id_cliente=<?php echo $row['id_cliente']?>" class="btn btn-dark">
+                                        <a href="editar_vehiculo.php?id_vehiculo=<?php echo $row['id_vehiculo']?>" class="btn btn-dark">
                                         <i class="fas fa-edit"></i>
 
                                         </a>
@@ -97,10 +99,10 @@
                                                       </button>
                                                     </div>
                                                     <div class="modal-body">
-                                                        ¿Está seguro que quiere eliminar el Cliente?
+                                                        ¿Está seguro que quiere eliminar el Vehículo ingresado?
                                                     </div>
                                                     <div class="modal-footer">
-                                                    <a href="eliminar_cliente.php?id_cliente=<?php echo $row['id_cliente']?>" class="btn btn-danger btn-block">ELIMINAR<i class="fas fa-trash"></i></i>
+                                                    <a href="eliminar_vehiculo.php?id_vehiculo=<?php echo $row['id_vehiculo']?>" class="btn btn-danger btn-block">ELIMINAR<i class="fas fa-trash"></i></i>
                                         
                                         </a>
                                                       <button type="button" class="btn btn-dark btn-block" data-dismiss="modal"><i class="fas fa-arrow-left"></i>Regresar</button>

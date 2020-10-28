@@ -30,10 +30,10 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ml-auto">
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="clientes.php">Registro de Reparación</a></li>
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="clientes.php">Stock Repuestos</a></li>
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="clientes.php">Clientes</a></li>
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="clientes.php">Vehículos</a></li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="tablareparacion.php">Registro de Reparación</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="tablarepuestos.php">Stock Repuestos</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="tablaclientes.php">Clientes</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="tablavehiculo.php">Vehículos</a></li>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="index.php">Cerrar Sesión</a></li>
                     </ul>
                 </div>
@@ -52,32 +52,34 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-8 mx-auto">
-                        <h2 class="text-white mb-4">Registro de Datos de Clientes</h2>
+                        <h2 class="text-white mb-4">Registro de Datos de Reparaciones</h2>
                         
                         <table style="width: 100%;" class="table table-stripedd">
                             <thead class="thead-dark">
                                 <tr>
-                                    <th>Nombre Completo</th>
-                                    <th>Nit </th>
-                                    <th>Teléfono</th>
-                                    <th>Dirección</th>
+                                    <th>Falla</th>
+                                    <th>Observaciones Técnicas</th>
+                                    <th>Fecha de Ingreso</th>
+                                    <th>Fecha de Egreso</th>
+                                    <th>Observación Final</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <?php 
-                       $query = "SELECT * FROM clientes";
+                       $query = "SELECT * FROM reparacion";
                        $result = mysqli_query($conn, $query);
                        
                        while ($row = mysqli_fetch_array($result)) { ?>
                                 <tr>
-                                    <td><p class="text-white-50"><?php echo $row['nombre_apellido'] ?></p></td>
-                                    <td><p class="text-white-50"><?php echo $row['nit'] ?></p></td>
-                                    <td><p class="text-white-50"><?php echo $row['telefono'] ?></p></td>
-                                    <td><p class="text-white-50"><?php echo $row['direccion'] ?></p></td>
+                                    <td><p class="text-white-50"><?php echo $row['falla'] ?></p></td>
+                                    <td><p class="text-white-50"><?php echo $row['observaciones_tecnicas'] ?></p></td>
+                                    <td><p class="text-white-50"><?php echo $row['fecha_ingreso'] ?></p></td>
+                                    <td><p class="text-white-50"><?php echo $row['fecha_egreso'] ?></p></td>
+                                    <td><p class="text-white-50"><?php echo $row['observacion_final'] ?></p></td>
                         
                                     <td>
                                   
-                                        <a href="editar_cliente.php?id_cliente=<?php echo $row['id_cliente']?>" class="btn btn-dark">
+                                        <a href="editar_reparacion.php?id_reparacion=<?php echo $row['id_reparacion']?>" class="btn btn-dark">
                                         <i class="fas fa-edit"></i>
 
                                         </a>
@@ -97,10 +99,10 @@
                                                       </button>
                                                     </div>
                                                     <div class="modal-body">
-                                                        ¿Está seguro que quiere eliminar el Cliente?
+                                                        ¿Está seguro que quiere eliminar el dato de reparación?
                                                     </div>
                                                     <div class="modal-footer">
-                                                    <a href="eliminar_cliente.php?id_cliente=<?php echo $row['id_cliente']?>" class="btn btn-danger btn-block">ELIMINAR<i class="fas fa-trash"></i></i>
+                                                    <a href="eliminar_reparacion.php?id_reparacion=<?php echo $row['id_reparacion']?>" class="btn btn-danger btn-block">ELIMINAR<i class="fas fa-trash"></i></i>
                                         
                                         </a>
                                                       <button type="button" class="btn btn-dark btn-block" data-dismiss="modal"><i class="fas fa-arrow-left"></i>Regresar</button>
