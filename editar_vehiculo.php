@@ -51,7 +51,7 @@
 
         <?php
    if(isset($_GET['id_vehiculo'])){
-    $id_cliente= $_GET['id_vehiculo'];
+    $id_vehiculo= $_GET['id_vehiculo'];
     $query = "SELECT * FROM vehiculo WHERE id_vehiculo=$id_vehiculo";
     $result=mysqli_query($conn, $query);
     if(mysqli_num_rows($result)==1){
@@ -61,6 +61,7 @@
         $linea= $row['linea'];
         $modelo= $row['modelo'];
         $color= $row['color'];
+        
     }
 }
 
@@ -73,28 +74,24 @@
                     <div class="col-lg-8 mx-auto">
                         <h2 class="text-white mb-4">Ingrese Datos del Vehículo</h2>
 
-
-                        
                         <div class="form-group">
                         <p class="text-white-50"><label for="placa">Placa</label>
                         <input type="text" class="form-control" name = "placa" id="placa" autofocus value="<?php echo $placa; ?>"></p>
-                       
-                        <div class="form-group">
+                   
+                    <div class="form-group">
                         <p class="text-white-50"><label for="marca">Marca</label>
                         <input type="text" class="form-control" name = "marca" id="marca" autofocus value="<?php echo $marca; ?>"></p>
-                    </p>
+
                     <div class="form-group">
                         <p class="text-white-50"><label for="linea">Línea</label>
                         <input type="text" class="form-control" name = "linea" id="linea" autofocus value="<?php echo $linea; ?>"></p>
-                    </p>
                     <div class="form-group">
                         <p class="text-white-50"><label for="modelo">Modelo</label>
                         <input type="text" class="form-control" name = "modelo" id="modelo" autofocus value="<?php echo $modelo; ?>"></p>
-                    </p>
                     <div class="form-group">
                         <p class="text-white-50"><label for="color">Color</label>
-                        <input type="text" class="form-control" name = "color" id="color" autofocus value="<?php echo $color; ?>"></p>
-                    </p>
+                        <input type="text" class="form-control" name= "color" id="color" autofocus value="<?php echo $color; ?>"></p>
+                        
                                                 
                                              
                                                

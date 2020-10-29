@@ -56,8 +56,8 @@
  
    $query = "UPDATE vehiculo set placa = '$placa', marca = '$marca', linea = '$linea', modelo = '$modelo', color = '$color'
     
-  WHERE id_vehiculo=$id_vehiculo";
-   mysqli_query($conn, $query);
+   WHERE id_vehiculo=$id_vehiculo";
+    mysqli_query($conn, $query);
 
  
  ?>
