@@ -50,48 +50,51 @@
 
 
         <?php
-   if(isset($_GET['id_cliente'])){
-    $id_cliente= $_GET['id_cliente'];
-    $query = "SELECT * FROM clientes WHERE id_cliente=$id_cliente";
+   if(isset($_GET['id_vehiculo'])){
+    $id_cliente= $_GET['id_vehiculo'];
+    $query = "SELECT * FROM vehiculo WHERE id_vehiculo=$id_vehiculo";
     $result=mysqli_query($conn, $query);
     if(mysqli_num_rows($result)==1){
         $row = mysqli_fetch_array($result);
-        $nombre_apellido= $row['nombre_apellido'];
-        $nit= $row['nit'];
-        $telefono= $row['telefono'];
-        $direccion= $row['direccion'];
-        
+        $placa= $row['placa'];
+        $marca= $row['marca'];
+        $linea= $row['linea'];
+        $modelo= $row['modelo'];
+        $color= $row['color'];
     }
 }
 
 ?>
-
-
-
-      <form action="editar_clientes_proceso.php?id_cliente=<?php echo $_GET['id_cliente']; ?>" method="POST">
+      <form action="editar_vehiculo_proceso.php?id_vehiculo=<?php echo $_GET['id_vehiculo']; ?>" method="POST">
         
      <section class="about-section text-center" id="about">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-8 mx-auto">
-                        <h2 class="text-white mb-4">Ingrese Datos del Cliente</h2>
+                        <h2 class="text-white mb-4">Ingrese Datos del Vehículo</h2>
+
+
+                        
                         <div class="form-group">
-                        <p class="text-white-50"><label for="nombre_apellido">Nombre Completo</label>
-                        <input type="text" class="form-control" name = "nombre_apellido"id="nombre_apellido" autofocus value="<?php echo $nombre_apellido; ?>"></p>
+                        <p class="text-white-50"><label for="placa">Placa</label>
+                        <input type="text" class="form-control" name = "placa" id="placa" autofocus value="<?php echo $placa; ?>"></p>
                        
                         <div class="form-group">
-                        <p class="text-white-50"><label for="nit">Nit</label>
-                        <input type="text" class="form-control" name = "nit" id="nit" autofocus value="<?php echo $nit; ?>"></p>
+                        <p class="text-white-50"><label for="marca">Marca</label>
+                        <input type="text" class="form-control" name = "marca" id="marca" autofocus value="<?php echo $marca; ?>"></p>
                     </p>
                     <div class="form-group">
-                        <p class="text-white-50"><label for="telefono">Telefono</label>
-                        <input type="text" class="form-control" name = "telefono" id="telefono" autofocus value="<?php echo $telefono; ?>"></p>
+                        <p class="text-white-50"><label for="linea">Línea</label>
+                        <input type="text" class="form-control" name = "linea" id="linea" autofocus value="<?php echo $linea; ?>"></p>
                     </p>
                     <div class="form-group">
-                        <p class="text-white-50"><label for="direccion">Direccion</label>
-                        <input type="text" class="form-control" name = "direccion" id="direccion" autofocus value="<?php echo $direccion; ?>"></p>
+                        <p class="text-white-50"><label for="modelo">Modelo</label>
+                        <input type="text" class="form-control" name = "modelo" id="modelo" autofocus value="<?php echo $modelo; ?>"></p>
                     </p>
-
+                    <div class="form-group">
+                        <p class="text-white-50"><label for="color">Color</label>
+                        <input type="text" class="form-control" name = "color" id="color" autofocus value="<?php echo $color; ?>"></p>
+                    </p>
                                                 
                                              
                                                

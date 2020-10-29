@@ -47,24 +47,24 @@
         
         <?php
 
-if(isset($_GET['id_cliente'])){
-   $id_cliente = $_GET ['id_cliente'];
-   $query = "DELETE  FROM clientes WHERE id_cliente= $id_cliente";
+if(isset($_GET['id_vehiculo'])){
+   $id_cliente = $_GET ['id_vehiculo'];
+   $query = "DELETE  FROM vehiculo WHERE id_vehiculo= $id_vehiculo";
    $result =mysqli_query($conn, $query);
    if (!$result){
        die("Query Failed");
 
    }
-   $_SESSION ['message'] = 'Cliente Eliminado';
+   $_SESSION ['message'] = 'Vehículo Eliminado';
    $_SESSION ['message_type'] = 'dark'; 
    
 }
 ?>
 <div class="alert alert-dark" role="alert">
-   Cliente Eliminado
+  Vehículo Eliminado
 </div>
 
-<form action="tablaclientes.php" method="post" >
+<form action="tablavehiculo.php" method="post" >
   <center>
 <input type="submit" class="btn btn-primary js-scroll-trigger"name="volver" value="Volver">
 </center>

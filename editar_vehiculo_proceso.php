@@ -46,26 +46,27 @@
               
         <?php
    
-   $id_cliente = $_GET['id_cliente'];
-   $nombre_apellido = $_POST['nombre_apellido'];
-   $nit = $_POST['nit'];
-   $telefono = $_POST['telefono'];
-   $direccion = $_POST['direccion'];
+   $id_vehiculo = $_GET['id_vehiculo'];
+   $placa = $_POST['placa'];
+   $marca = $_POST['marca'];
+   $linea = $_POST['linea'];
+   $modelo = $_POST['modelo'];
+   $color = $_POST['color'];
    
  
-   $query = "UPDATE clientes set nombre_apellido = '$nombre_apellido', nit = '$nit', telefono = '$telefono', direccion = '$direccion'
+   $query = "UPDATE vehiculo set placa = '$placa', marca = '$marca', linea = '$linea', modelo = '$modelo', color = '$color'
     
-  WHERE id_cliente=$id_cliente";
+  WHERE id_vehiculo=$id_vehiculo";
    mysqli_query($conn, $query);
 
  
  ?>
 
 <div class="alert alert-dark" role="alert">
-   Cliente Modificado
+   Vehículo Modificado
 </div>
 
-<form action="tablaclientes.php" method="post" >
+<form action="tablavehiculo.php" method="post" >
   <center>
 <input type="submit" class="btn btn-primary js-scroll-trigger"name="volver" value="Volver">
 </center>

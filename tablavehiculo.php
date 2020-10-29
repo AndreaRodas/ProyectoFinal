@@ -52,7 +52,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-8 mx-auto">
-                        <h2 class="text-white mb-4">Registro de Datos de Clientes</h2>
+                        <h2 class="text-white mb-4">Registro de Datos de los Vehículos</h2>
                         
                         <table style="width: 100%;" class="table table-stripedd">
                             <thead class="thead-dark">
@@ -72,7 +72,7 @@
                        while ($row = mysqli_fetch_array($result)) { ?>
                                 <tr>
                                     <td><p class="text-white-50"><?php echo $row['placa'] ?></p></td>
-                                    <td><p class="text-white-50"><?php echo $row['maraca'] ?></p></td>
+                                    <td><p class="text-white-50"><?php echo $row['marca'] ?></p></td>
                                     <td><p class="text-white-50"><?php echo $row['linea'] ?></p></td>
                                     <td><p class="text-white-50"><?php echo $row['modelo'] ?></p></td>
                                     <td><p class="text-white-50"><?php echo $row['color'] ?></p></td>
