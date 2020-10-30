@@ -52,32 +52,34 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-8 mx-auto">
-                        <h2 class="text-white mb-4">Registro de Datos de Clientes</h2>
+                        <h2 class="text-white mb-4">Registro de Datos de Repuestos</h2>
                         
                         <table style="width: 100%;" class="table table-stripedd">
                             <thead class="thead-dark">
                                 <tr>
-                                    <th>Nombre Completo</th>
-                                    <th>Nit </th>
-                                    <th>Teléfono</th>
-                                    <th>Dirección</th>
+                                    <th>Nombre del Repuesto</th>
+                                    <th>Precio</th>
+                                    <th>Stock</th>
+                                    <th>Imagen del Repuesto</th>
+                                    <th>Descripción</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <?php 
-                       $query = "SELECT * FROM clientes";
+                       $query = "SELECT * FROM repuestos";
                        $result = mysqli_query($conn, $query);
                        
                        while ($row = mysqli_fetch_array($result)) { ?>
                                 <tr>
-                                    <td><p class="text-white-50"><?php echo $row['nombre_apellido'] ?></p></td>
-                                    <td><p class="text-white-50"><?php echo $row['nit'] ?></p></td>
-                                    <td><p class="text-white-50"><?php echo $row['telefono'] ?></p></td>
-                                    <td><p class="text-white-50"><?php echo $row['direccion'] ?></p></td>
+                                    <td><p class="text-white-50"><?php echo $row['nombre_repuesto'] ?></p></td>
+                                    <td><p class="text-white-50"><?php echo $row['precio'] ?></p></td>
+                                    <td><p class="text-white-50"><?php echo $row['stock'] ?></p></td>
+                                    <td><p class="text-white-50"><?php echo $row['imagen_repuesto'] ?></p></td>
+                                    <td><p class="text-white-50"><?php echo $row['descripcion'] ?></p></td>
                         
                                     <td>
                                   
-                                        <a href="editar_cliente.php?id_cliente=<?php echo $row['id_cliente']?>" class="btn btn-dark">
+                                        <a href="editar_repuestos.php?id_repuestos=<?php echo $row['id_repuestos']?>" class="btn btn-dark">
                                         <i class="fas fa-edit"></i>
 
                                         </a>
@@ -97,10 +99,10 @@
                                                       </button>
                                                     </div>
                                                     <div class="modal-body">
-                                                        ¿Está seguro que quiere eliminar el Cliente?
+                                                        ¿Está seguro que quiere eliminar el Repuesto?
                                                     </div>
                                                     <div class="modal-footer">
-                                                    <a href="eliminar_cliente.php?id_cliente=<?php echo $row['id_cliente']?>" class="btn btn-danger btn-block">ELIMINAR<i class="fas fa-trash"></i></i>
+                                                    <a href="eliminar_repuestos.php?id_repuestos=<?php echo $row['id_repuestos']?>" class="btn btn-danger btn-block">ELIMINAR<i class="fas fa-trash"></i></i>
                                         
                                         </a>
                                                       <button type="button" class="btn btn-dark btn-block" data-dismiss="modal"><i class="fas fa-arrow-left"></i>Regresar</button>
