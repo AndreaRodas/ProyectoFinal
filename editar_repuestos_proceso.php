@@ -1,6 +1,6 @@
 <?php include ("conexion_cliente.php")
 ?>
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="en">
     <head>
         <meta charset="utf-8" />

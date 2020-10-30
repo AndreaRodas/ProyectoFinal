@@ -47,7 +47,7 @@
             </div>
         </header>
         
-
+ 
 
         <?php
    if(isset($_GET['id_repuestos'])){
@@ -83,8 +83,9 @@
                         <p class="text-white-50"><label for="stock">Repuesto en existencia</label>
                             <input type="text" class="form-control" name="stock" id="stock" autofocus value="<?php echo $stock; ?>"></p>
                     <div class="form-group">
-                        <p class="text-white-50"> <label for="imagen_repuesto">Imagen Repuesto</label>
-                            <input type="file" class="form-control-file" name="imagen_repuesto" id="imagen_repuesto" autofocus value="<?php echo $imagen_repuesto; ?>"></p>
+                        <p class="text-white-50"> <label for="imagen_repuesto">Imagen Repuesto</label><br></br>
+                        <img height="50px"src="data:image/jpg;base64,<?php echo base64_encode($row['imagen_repuesto']); ?>"/>
+                        <input type="file" name="imagen_repuesto" class="form-control" placeholder="" autofocus ></p>
                             <div class="form-group">
                                 <p class="text-white-50"><label for="descripcion">Descripcion</label>
                                     <textarea class="form-control" name="descripcion" id="descripcion" rows="3" autofocus value="<?php echo $descripcion;?>"></textarea>
