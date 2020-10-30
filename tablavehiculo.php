@@ -6,7 +6,7 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
-        <meta name="author" content="" />
+        <meta name="author" content="" /> 
         <title>Taller-Tek</title>
         <link rel="icon" type="image/x-icon" href="img/logo.ico" />
        
@@ -79,7 +79,7 @@
                         
                                     <td>
                                   
-                                        <a href="editar_vehiculo.php?id_vehiculo=<?php echo $row['id_vehiculo']?>" class="btn btn-dark">
+                                        <a href="editar_vehiculo.php?id_vehiculo=<?php echo $row['id_vehiculo']?>" class="btn btn-primary js-scroll-trigger">
                                         <i class="fas fa-edit"></i>
 
                                         </a>

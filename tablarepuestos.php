@@ -74,12 +74,12 @@
                                     <td><p class="text-white-50"><?php echo $row['nombre_repuesto'] ?></p></td>
                                     <td><p class="text-white-50"><?php echo $row['precio'] ?></p></td>
                                     <td><p class="text-white-50"><?php echo $row['stock'] ?></p></td>
-                                    <td><p class="text-white-50"><?php echo $row['imagen_repuesto'] ?></p></td>
+                                    <td><img height="50px"src="data:image/jpg;base64,<?php echo base64_encode($row['imagen_repuesto']); ?>"/></td>
                                     <td><p class="text-white-50"><?php echo $row['descripcion'] ?></p></td>
                         
                                     <td>
                                   
-                                        <a href="editar_repuestos.php?id_repuestos=<?php echo $row['id_repuestos']?>" class="btn btn-dark">
+                                        <a href="editar_repuestos.php?id_repuestos=<?php echo $row['id_repuestos']?>" class="btn btn-primary js-scroll-trigger">
                                         <i class="fas fa-edit"></i>
 
                                         </a>
@@ -104,7 +104,7 @@
                                                     <div class="modal-footer">
                                                     <a href="eliminar_repuestos.php?id_repuestos=<?php echo $row['id_repuestos']?>" class="btn btn-danger btn-block">ELIMINAR<i class="fas fa-trash"></i></i>
                                         
-                                        </a>
+                                        </a> 
                                                       <button type="button" class="btn btn-dark btn-block" data-dismiss="modal"><i class="fas fa-arrow-left"></i>Regresar</button>
                                                       
                                                     </div>

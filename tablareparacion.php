@@ -79,7 +79,7 @@
                         
                                     <td>
                                   
-                                        <a href="editar_reparacion.php?id_reparacion=<?php echo $row['id_reparacion']?>" class="btn btn-dark">
+                                        <a href="editar_reparacion.php?id_reparacion=<?php echo $row['id_reparacion']?>" class="btn btn-primary js-scroll-trigger">
                                         <i class="fas fa-edit"></i>
 
                                         </a>
