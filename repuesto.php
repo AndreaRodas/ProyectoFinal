@@ -1,3 +1,19 @@
+<?php
+
+if(!isset($_SESSION)) 
+    { 
+        session_start(); 
+    }
+    
+$user = $_SESSION['nombre'];
+
+if (!isset($user)) {
+    header("location: index.php");
+}else{
+
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -30,6 +46,7 @@
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="tablarepuestos.php">Stock Repuestos</a></li>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="tablaclientes.php">Clientes</a></li>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="tablavehiculo.php">Vehículos</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="salir.php">Cerrar Sesion</a></li>
                     </ul>
                 </div>
             </div>
@@ -116,3 +133,6 @@
         <script src="js/scripts.js"></script>
     </body>
 </html>
+<?php
+}
+?>

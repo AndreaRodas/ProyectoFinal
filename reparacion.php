@@ -1,3 +1,20 @@
+<?php
+include ("conexion_cliente.php");
+
+if(!isset($_SESSION)) 
+    { 
+        session_start(); 
+    }
+    
+$user = $_SESSION['nombre'];
+
+if (!isset($user)) {
+    header("location: index.php");
+}else{
+
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -29,7 +46,9 @@
                     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="tablareparacion.php">Registro de Reparación</a></li>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="tablarepuestos.php">Stock Repuestos</a></li>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="tablaclientes.php">Clientes</a></li>
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="tablavehiculo.php">Vehículos</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="tablavehiculo.php">
+                        Vehículos</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="salir.php">Cerrar Sesion</a></li>
                     </ul>
                 </div>
             </div>
@@ -60,16 +79,29 @@
                     </p>
                     <div class="form-group">
                         <p class="text-white-50"><label for="fecha_ingreso">Fecha de Ingreso</label>
-                            <input type="text" class="form-control" name="fecha_ingreso" id="fecha_ingreso">
+                            <input type="date" class="form-control" name="fecha_ingreso" id="fecha_ingreso">
                         </p>
                         <div class="form-group">
                             <p class="text-white-50"><label for="fecha_egreso">Fecha de Egreso</label>
-                                <input type="text" class="form-control" name="fecha_egreso" id="fecha_egreso">
+                                <input type="date" class="form-control" name="fecha_egreso" id="fecha_egreso">
                             </p>
                             <div class="form-group">
                                 <p class="text-white-50"><label for="observacion_final">Observaciones Final</label>
                                     <textarea class="form-control" name="observacion_final" id="observacion_final" rows="3"></textarea>
                             </p>
+                        </div>
+                        <div class="form-group">
+                                <select class="form-control" name="placa">
+                                <option>Seleccione placa del vehiculo</option>
+                                <?php
+                                    $vehiculos="SELECT * FROM vehiculo";
+                                    $result = mysqli_query($conn, $vehiculos);
+                       
+                                    while ($row = mysqli_fetch_array($result)) {
+                                        echo '<option value="'.$row['id_vehiculo'].'">'.$row['placa'].'</option>';
+                                }?>
+                                </select>
+                        </div>
                             <button type="button" class="btn btn-primary js-scroll-trigger" data-toggle="modal" data-target="#exampleModal"><i class="far fa-save"></i>
                                                         Guardar
                                                       </button>
@@ -116,3 +148,6 @@
         <script src="js/scripts.js"></script>
     </body>
 </html>
+<?php
+}
+?>

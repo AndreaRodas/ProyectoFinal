@@ -1,4 +1,18 @@
-<?php include ("conexion_cliente.php")
+<?php 
+
+include ("conexion_cliente.php");
+
+if(!isset($_SESSION)) 
+    { 
+        session_start(); 
+    } 
+    
+$user = $_SESSION['nombre'];
+
+if (!isset($user)) {
+    header("location: index.php");
+}else{
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -34,6 +48,7 @@
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="tablarepuestos.php">Stock Repuestos</a></li>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="tablaclientes.php">Clientes</a></li>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="tablavehiculo.php">Vehículos</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="salir.php">Cerrar Sesion</a></li>
                     </ul>
                 </div>
             </div>
@@ -50,6 +65,9 @@
         <section class="about-section text-center" id="about">
             <div class="container">
                 <div class="row">
+                    <div class="col-lg-8 mx-auto">
+                        <a href="reparacion.php" class="btn btn-primary"><i class="fas fa-plus"></i> Agregar Reparacion</a>
+                    </div>
                     <div class="col-lg-8 mx-auto">
                         <h2 class="text-white mb-4">Registro de Datos de Reparaciones</h2>
                         
@@ -153,3 +171,6 @@
         <script src="js/scripts.js"></script>
     </body>
 </html>
+<?php
+}
+?>
