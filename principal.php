@@ -1,16 +1,3 @@
-<?php
-
-session_start();
-$user = $_SESSION['nombre'];
-
-if (!isset($user)) {
-    header("location: index.php");
-}else{
-
-
-
-?>
-
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -43,7 +30,6 @@ if (!isset($user)) {
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="tablarepuestos.php">Stock Repuestos</a></li>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="tablaclientes.php">Clientes</a></li>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="tablavehiculo.php">Vehículos</a></li>
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="salir.php">Cerrar Sesion</a></li>
                     </ul>
                 </div>
             </div>
@@ -54,7 +40,7 @@ if (!isset($user)) {
                 <div class="mx-auto text-center">
                     <h1 class="mx-auto my-0 text-uppercase">Taller-Tek</h1>
                     <h2 class="text-white-50 mx-auto mt-2 mb-5">Sabemos lo que tu auto significa para ti!</h2>
-                    
+                    <a class="btn btn-primary js-scroll-trigger" href="clientes.php">Ingresar </a>
                 </div>
             </div>
         </header>
@@ -69,9 +55,7 @@ if (!isset($user)) {
         <script src="js/scripts.js"></script>
     </body>
 </html>
-<?php
-}
-?>
+
 
 
 

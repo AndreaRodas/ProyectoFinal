@@ -1,18 +1,5 @@
 <?php 
-
-include ("conexion_cliente.php");
-
-if(!isset($_SESSION)) 
-    { 
-        session_start(); 
-    } 
-    
-$user = $_SESSION['nombre'];
-
-if (!isset($user)) {
-    header("location: index.php");
-}else{
-
+include ("conexion_reparacion.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -48,7 +35,6 @@ if (!isset($user)) {
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="tablarepuestos.php">Stock Repuestos</a></li>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="tablaclientes.php">Clientes</a></li>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="tablavehiculo.php">Vehículos</a></li>
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="salir.php">Cerrar Sesion</a></li>
                     </ul>
                 </div>
             </div>
@@ -66,9 +52,6 @@ if (!isset($user)) {
             <div class="container">
                 <div class="row">
                     <div class="col-lg-8 mx-auto">
-                        <a href="reparacion.php" class="btn btn-primary"><i class="fas fa-plus"></i> Agregar Reparacion</a>
-                    </div>
-                    <div class="col-lg-8 mx-auto">
                         <h2 class="text-white mb-4">Registro de Datos de Reparaciones</h2>
                         
                         <table style="width: 100%;" class="table table-stripedd">
@@ -78,7 +61,7 @@ if (!isset($user)) {
                                     <th>Observaciones Técnicas</th>
                                     <th>Fecha de Ingreso</th>
                                     <th>Fecha de Egreso</th>
-                                    <th>Observación Final</th>
+                                    <th>Observación Final</th>    
                                 </tr>
                             </thead>
                             <tbody>
@@ -93,7 +76,7 @@ if (!isset($user)) {
                                     <td><p class="text-white-50"><?php echo $row['fecha_ingreso'] ?></p></td>
                                     <td><p class="text-white-50"><?php echo $row['fecha_egreso'] ?></p></td>
                                     <td><p class="text-white-50"><?php echo $row['observacion_final'] ?></p></td>
-                        
+                                    
                                     <td>
                                   
                                         <a href="editar_reparacion.php?id_reparacion=<?php echo $row['id_reparacion']?>" class="btn btn-primary js-scroll-trigger">
@@ -133,21 +116,9 @@ if (!isset($user)) {
                                               </div>
                                     </td>
                                 </tr>
-
                                 <?php } ?>
                             </tbody>
                         </table>
-
-
-
-
-
-
-
-                    
-                                                                   
-                
-            
                 </div>
                 </div>
                 </div>
@@ -171,6 +142,3 @@ if (!isset($user)) {
         <script src="js/scripts.js"></script>
     </body>
 </html>
-<?php
-}
-?>

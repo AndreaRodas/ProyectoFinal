@@ -1,19 +1,5 @@
 <?php
-include ("conexion_cliente.php");
-
-if(!isset($_SESSION)) 
-    { 
-        session_start(); 
-    }
-    
-$user = $_SESSION['nombre'];
-
-if (!isset($user)) {
-    header("location: index.php");
-}else{
-
-
-
+include ("conexion_reparacion.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -46,9 +32,7 @@ if (!isset($user)) {
                     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="tablareparacion.php">Registro de Reparación</a></li>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="tablarepuestos.php">Stock Repuestos</a></li>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="tablaclientes.php">Clientes</a></li>
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="tablavehiculo.php">
-                        Vehículos</a></li>
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="salir.php">Cerrar Sesion</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="tablavehiculo.php">Vehículos</a></li>
                     </ul>
                 </div>
             </div>
@@ -91,14 +75,15 @@ if (!isset($user)) {
                             </p>
                         </div>
                         <div class="form-group">
-                                <select class="form-control" name="placa">
-                                <option>Seleccione placa del vehiculo</option>
+                        <p class="text-white-50"><label for="repuesto">Repuesto</label>
+                                <select class="form-control" name="nombre_repuesto">
+                                <option>Seleccione el Repuesto</option>
                                 <?php
-                                    $vehiculos="SELECT * FROM vehiculo";
-                                    $result = mysqli_query($conn, $vehiculos);
+                                    $repuesto="SELECT * FROM repuestos";
+                                    $result = mysqli_query($conn, $repuesto);
                        
                                     while ($row = mysqli_fetch_array($result)) {
-                                        echo '<option value="'.$row['id_vehiculo'].'">'.$row['placa'].'</option>';
+                                        echo '<option value="'.$row['id_repuestos'].'">'.$row['nombre_repuesto'].'</option>';
                                 }?>
                                 </select>
                         </div>
@@ -148,6 +133,3 @@ if (!isset($user)) {
         <script src="js/scripts.js"></script>
     </body>
 </html>
-<?php
-}
-?>

@@ -1,16 +1,5 @@
 <?php include ("conexion_vehiculo.php");
 
-if(!isset($_SESSION)) 
-    { 
-        session_start(); 
-    }
-    
-$user = $_SESSION['nombre'];
-
-if (!isset($user)) {
-    header("location: index.php");
-}else{
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -44,7 +33,6 @@ if (!isset($user)) {
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="tablarepuestos.php">Stock Repuestos</a></li>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="tablaclientes.php">Clientes</a></li>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="tablavehiculo.php">Vehículos</a></li>
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="salir.php">Cerrar Sesion</a></li>
                     </ul>
                 </div>
             </div>
@@ -85,6 +73,19 @@ if (!isset($user)) {
                         <p class="text-white-50"><label for="color">Color</label>
                         <input type="text" class="form-control" name= "color" id="color">
                     </p>
+                    <div class="form-group">
+                    <p class="text-white-50"><label for="cliente">Cliente</label>
+                                <select class="form-control" name="nombre_apellido">
+                                <option>Seleccione el cliente</option>
+                                <?php
+                                    $cliente="SELECT * FROM clientes";
+                                    $result = mysqli_query($conn, $cliente);
+                       
+                                    while ($row = mysqli_fetch_array($result)) {
+                                        echo '<option value="'.$row['id_cliente'].'">'.$row['nombre_apellido'].'</option>';
+                                }?>
+                                </select>
+                        </div>
                     
                     <button type="button" class="btn btn-primary js-scroll-trigger" data-toggle="modal" data-target="#exampleModal"><i class="far fa-save"></i>
                                                         Guardar
@@ -137,6 +138,3 @@ if (!isset($user)) {
         <script src="js/scripts.js"></script>
     </body>
 </html>
-<?php
-}
-?>

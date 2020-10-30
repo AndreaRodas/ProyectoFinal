@@ -48,7 +48,7 @@
         
 
 
-        <?php
+        <?php  
    if(isset($_GET['id_reparacion'])){
     $id_reparacion= $_GET['id_reparacion'];
     $query = "SELECT * FROM reparacion WHERE id_reparacion=$id_reparacion";
@@ -88,8 +88,6 @@
                     <div class="form-group">
                         <p class="text-white-50"><label for="observacion_final">Observaciones Finales</label>
                         <input type="text" class="form-control" name= "observacion_final" id="color" autofocus value="<?php echo $observacion_final; ?>"></p>
-                        
-                                                
                                              
                                                
                                                 <button class="btn btn-primary js-scroll-trigger" name="update">

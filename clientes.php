@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta charset="utf-8" />
+        <meta charset="utf-8" /> 
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
@@ -54,7 +54,7 @@
                         
                         <div class="form-group">
                         <p class="text-white-50"><label for="nombre_apellido">Nombre Completo</label>
-                        <input type="text" class="form-control" name = "nombre_apellido"id="nombre_apellido">
+                        <input type="text" class="form-control" name = "nombre_apellido" id="nombre_apellido">
                     </p>
                     <div class="form-group">
                         <p class="text-white-50"><label for="nit">Nit</label>

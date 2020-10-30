@@ -10,10 +10,10 @@ if (isset($_POST['guardar_vehiculo'])){
      $linea = $_POST['linea'];
      $modelo = $_POST['modelo'];
      $color = $_POST['color'];
- 
+     $cliente = $_POST['nombre_apellido'];
     
-     $query = "INSERT INTO  vehiculo(placa, marca, linea, modelo, color) 
-    VALUES ('$placa', '$marca', '$linea', '$modelo', '$color')";
+     $query = "INSERT INTO  vehiculo(placa, marca, linea, modelo, color, id_cliente) 
+    VALUES ('$placa', '$marca', '$linea', '$modelo', '$color', '$cliente')";
      $result = mysqli_query ($conn, $query);
      if (!$result){
          die("Query Failed");
@@ -22,7 +22,7 @@ if (isset($_POST['guardar_vehiculo'])){
       $_SESSION['message'] = 'Vehiculo Guardado';
       $_SESSION['message_type'] = 'info';
 
-      header ("Location: reparacion.php");
+      header ("Location: repuesto.php");
 }
 
 ?>

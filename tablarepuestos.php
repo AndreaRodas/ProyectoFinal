@@ -1,16 +1,4 @@
-<?php include ("conexion_cliente.php");
-
-if(!isset($_SESSION)) 
-    { 
-        session_start(); 
-    }
-    
-$user = $_SESSION['nombre'];
-
-if (!isset($user)) {
-    header("location: index.php");
-}else{
-
+<?php include ("conexion_repuesto.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -46,7 +34,6 @@ if (!isset($user)) {
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="tablarepuestos.php">Stock Repuestos</a></li>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="tablaclientes.php">Clientes</a></li>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="tablavehiculo.php">Vehículos</a></li>
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="salir.php">Cerrar Sesion</a></li>
                     </ul>
                 </div>
             </div>
@@ -63,9 +50,6 @@ if (!isset($user)) {
         <section class="about-section text-center" id="about">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-8 mx-auto">
-                        <a href="repuesto.php" class="btn btn-primary"><i class="fas fa-plus"></i> Agregar Repuesto</a>
-                    </div>
                     <div class="col-lg-8 mx-auto">
                         <h2 class="text-white mb-4">Registro de Datos de Repuestos</h2>
                         
@@ -135,17 +119,6 @@ if (!isset($user)) {
                                 <?php } ?>
                             </tbody>
                         </table>
-
-
-
-
-
-
-
-                    
-                                                                    
-                
-            
                 </div>
                 </div>
                 </div>
@@ -169,6 +142,3 @@ if (!isset($user)) {
         <script src="js/scripts.js"></script>
     </body>
 </html>
-<?php
-}
-?>

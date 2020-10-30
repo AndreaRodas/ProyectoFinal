@@ -10,10 +10,10 @@ if (isset($_POST['guardar_reparacion'])){
      $fecha_ingreso = $_POST['fecha_ingreso'];
      $fecha_egreso = $_POST['fecha_egreso'];
      $observacion_final = $_POST['observacion_final'];
-     $vehiculo = $_POST['placa'];
+     $repuesto = $_POST['nombre_repuesto'];
     
-     $query = "INSERT INTO  reparacion(falla, observaciones_tecnicas, fecha_ingreso, fecha_egreso, observacion_final,id_vehiculo) 
-    VALUES ('$falla', '$observaciones_tecnicas', '$fecha_ingreso', '$fecha_egreso', '$observacion_final','$vehiculo')";
+     $query = "INSERT INTO  reparacion(falla, observaciones_tecnicas, fecha_ingreso, fecha_egreso, observacion_final,id_repuestos) 
+    VALUES ('$falla', '$observaciones_tecnicas', '$fecha_ingreso', '$fecha_egreso', '$observacion_final','$repuesto')";
      $result = mysqli_query ($conn, $query);
      if (!$result){
          die("Query Failed");
@@ -22,7 +22,7 @@ if (isset($_POST['guardar_reparacion'])){
       $_SESSION['message'] = 'Reparación Guardada';
       $_SESSION['message_type'] = 'info';
 
-      header ("Location: repuesto.php");
+      header ("Location: principal.php");
 }
 
-?>
+?> 

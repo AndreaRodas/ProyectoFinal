@@ -1,18 +1,5 @@
 <?php
-
-if(!isset($_SESSION)) 
-    { 
-        session_start(); 
-    }
-    
-$user = $_SESSION['nombre'];
-
-if (!isset($user)) {
-    header("location: index.php");
-}else{
-
-
-
+include ("conexion_repuesto.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -46,12 +33,11 @@ if (!isset($user)) {
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="tablarepuestos.php">Stock Repuestos</a></li>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="tablaclientes.php">Clientes</a></li>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="tablavehiculo.php">Vehículos</a></li>
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="salir.php">Cerrar Sesion</a></li>
                     </ul>
                 </div>
             </div>
         </nav>
-        
+         
         <header class="masthead">
             <div class="container d-flex h-100 align-items-center">
                 <div class="mx-auto text-center">
@@ -87,6 +73,19 @@ if (!isset($user)) {
                                 <p class="text-white-50"><label for="descripcion">Descripcion</label>
                                     <textarea class="form-control" name="descripcion" id="descripcion" rows="3"></textarea>
                             </p>
+                            <div class="form-group">
+                            <p class="text-white-50"><label for="vehiculo">Vehiculo</label>
+                                <select class="form-control" name="placa">
+                                <option>Seleccione placa del vehiculo</option>
+                                <?php 
+                                    $vehiculos="SELECT * FROM vehiculo";
+                                    $result = mysqli_query($conn, $vehiculos);
+                       
+                                    while ($row = mysqli_fetch_array($result)) {
+                                        echo '<option value="'.$row['id_vehiculo'].'">'.$row['placa'].'</option>';
+                                }?>
+                                </select>
+                        </div>
                             <button type="button" class="btn btn-primary js-scroll-trigger" data-toggle="modal" data-target="#exampleModal"><i class="far fa-save"></i>
                                                         Guardar
                                                       </button>
@@ -133,6 +132,3 @@ if (!isset($user)) {
         <script src="js/scripts.js"></script>
     </body>
 </html>
-<?php
-}
-?>
